@@ -2782,7 +2782,7 @@ head(FemalePairingStatusTrtOk)
 # write.table(NestCheck, file = "R_NestCheck.xls", sep="\t", col.names=TRUE)
 # write.table(FemalePairingStatus, file = "R_FemalePairingStatus.xls", sep="\t", col.names=TRUE)
 # write.table(FemalePairingStatusTrtOk, file = "R_FemalePairingStatusTrtOk.xls", sep="\t", col.names=TRUE)
-
+# write.table(allmales, file = "R_allmales.xls", sep="\t", col.names=TRUE)
 
 DurationScript <- Sys.time() - TimeStart
 DurationScript
@@ -7943,31 +7943,31 @@ axis(side=3, at= c(-1,-0.5,0,0.5,1), tck=0.03, labels=c(rep("",5)))
 arrows(0.26,10,0.26,8.7,code=2, length=0.08,lwd=2, col='grey40', angle=45)
 mtext("Beak Color",at=0, side = 3, line = 1, cex=1, font=2)
 # without F in model
-arrows(metaBeakColorMunselAbn$lower[metaBeakColorMunselAbn$study == 'Johannes'],5.85,
-metaBeakColorMunselAbn$upper[metaBeakColorMunselAbn$study == 'Johannes'],5.85, length=0, col='grey', lwd=1)
-points(x= metaBeakColorMunselAbn$est[metaBeakColorMunselAbn$study == 'Johannes'], y=5.85,pch=21, cex=sqrt(NJohannesBeakMunselAbn)*0.3, col='grey',bg='white')
-arrows(metaBeakColorMunselAbn$lower[metaBeakColorMunselAbn$study == 'Sanja'],3.7,
-metaBeakColorMunselAbn$upper[metaBeakColorMunselAbn$study == 'Sanja'],3.7, length=0, col ="grey", lwd=1)
-points(x= metaBeakColorMunselAbn$est[metaBeakColorMunselAbn$study == 'Sanja'], y=3.7,pch=21, cex=sqrt(NSanjaBeakMunselAbn)*0.3, col='grey',bg='white')
-polygon(x= c(summarymetaBeakColorMunselAbn$summary -summarymetaBeakColorMunselAbn$se.summary*1.96,
-			 summarymetaBeakColorMunselAbn$summary,
-			 summarymetaBeakColorMunselAbn$summary+summarymetaBeakColorMunselAbn$se.summary*1.96,
-			 summarymetaBeakColorMunselAbn$summary),
+arrows(metaBeakColorMunselAbnREV$lower[metaBeakColorMunselAbnREV$study == 'Johannes'],5.85,
+metaBeakColorMunselAbnREV$upper[metaBeakColorMunselAbnREV$study == 'Johannes'],5.85, length=0, col='grey', lwd=1)
+points(x= metaBeakColorMunselAbnREV$est[metaBeakColorMunselAbnREV$study == 'Johannes'], y=5.85,pch=21, cex=sqrt(NJohannesBeakMunselAbn)*0.3, col='grey',bg='white')
+arrows(metaBeakColorMunselAbnREV$lower[metaBeakColorMunselAbnREV$study == 'Sanja'],3.7,
+metaBeakColorMunselAbnREV$upper[metaBeakColorMunselAbnREV$study == 'Sanja'],3.7, length=0, col ="grey", lwd=1)
+points(x= metaBeakColorMunselAbnREV$est[metaBeakColorMunselAbnREV$study == 'Sanja'], y=3.7,pch=21, cex=sqrt(NSanjaBeakMunselAbn)*0.3, col='grey',bg='white')
+polygon(x= c(summarymetaBeakColorMunselAbnREV$summary -summarymetaBeakColorMunselAbnREV$se.summary*1.96,
+			 summarymetaBeakColorMunselAbnREV$summary,
+			 summarymetaBeakColorMunselAbnREV$summary+summarymetaBeakColorMunselAbnREV$se.summary*1.96,
+			 summarymetaBeakColorMunselAbnREV$summary),
 		y=c(1.3,1.3-0.3,1.3,1.3+0.3), border='grey')
 # with F in model
-points(x= metaBeakColorMunselAbnF$est[metaBeakColorMunselAbnF$study == 'Malika'], y=7.6,pch=19, cex=sqrt(NMalikaBeakAbn)*0.3)
-arrows(metaBeakColorMunselAbnF$lower[metaBeakColorMunselAbnF$study == 'Malika'],7.6,
-metaBeakColorMunselAbnF$upper[metaBeakColorMunselAbnF$study == 'Malika'],7.6, length=0, col = "black", lwd=2)
-points(x= metaBeakColorMunselAbnF$est[metaBeakColorMunselAbnF$study == 'Johannes'], y=5.05,pch=19, cex=sqrt(NJohannesBeakMunselAbn)*0.3)
-arrows(metaBeakColorMunselAbnF$lower[metaBeakColorMunselAbnF$study == 'Johannes'],5.05,
-metaBeakColorMunselAbnF$upper[metaBeakColorMunselAbnF$study == 'Johannes'],5.05, length=0, col = "black", lwd=2)
-points(x= metaBeakColorMunselAbnF$est[metaBeakColorMunselAbnF$study == 'Sanja'], y=2.9, pch=19, cex=sqrt(NSanjaBeakMunselAbn)*0.3)
-arrows(metaBeakColorMunselAbnF$lower[metaBeakColorMunselAbnF$study == 'Sanja'],2.9,
-metaBeakColorMunselAbnF$upper[metaBeakColorMunselAbnF$study == 'Sanja'],2.9, length=0, col = "black", lwd=2)
-polygon(x= c(summarymetaBeakColorMunselAbnF$summary -summarymetaBeakColorMunselAbnF$se.summary*1.96,
-			 summarymetaBeakColorMunselAbnF$summary,
-			 summarymetaBeakColorMunselAbnF$summary+summarymetaBeakColorMunselAbnF$se.summary*1.96,
-			 summarymetaBeakColorMunselAbnF$summary),
+points(x= metaBeakColorMunselAbnREVF$est[metaBeakColorMunselAbnREVF$study == 'Malika'], y=7.6,pch=19, cex=sqrt(NMalikaBeakAbn)*0.3)
+arrows(metaBeakColorMunselAbnREVF$lower[metaBeakColorMunselAbnREVF$study == 'Malika'],7.6,
+metaBeakColorMunselAbnREVF$upper[metaBeakColorMunselAbnREVF$study == 'Malika'],7.6, length=0, col = "black", lwd=2)
+points(x= metaBeakColorMunselAbnREVF$est[metaBeakColorMunselAbnREVF$study == 'Johannes'], y=5.05,pch=19, cex=sqrt(NJohannesBeakMunselAbn)*0.3)
+arrows(metaBeakColorMunselAbnREVF$lower[metaBeakColorMunselAbnREVF$study == 'Johannes'],5.05,
+metaBeakColorMunselAbnREVF$upper[metaBeakColorMunselAbnREVF$study == 'Johannes'],5.05, length=0, col = "black", lwd=2)
+points(x= metaBeakColorMunselAbnREVF$est[metaBeakColorMunselAbnREVF$study == 'Sanja'], y=2.9, pch=19, cex=sqrt(NSanjaBeakMunselAbn)*0.3)
+arrows(metaBeakColorMunselAbnREVF$lower[metaBeakColorMunselAbnREVF$study == 'Sanja'],2.9,
+metaBeakColorMunselAbnREVF$upper[metaBeakColorMunselAbnREVF$study == 'Sanja'],2.9, length=0, col = "black", lwd=2)
+polygon(x= c(summarymetaBeakColorMunselAbnREVF$summary -summarymetaBeakColorMunselAbnREVF$se.summary*1.96,
+			 summarymetaBeakColorMunselAbnREVF$summary,
+			 summarymetaBeakColorMunselAbnREVF$summary+summarymetaBeakColorMunselAbnREVF$se.summary*1.96,
+			 summarymetaBeakColorMunselAbnREVF$summary),
 		y=c(0.6,0.6-0.3,0.6,0.6+0.3), col='black')
 
 		
@@ -7980,31 +7980,31 @@ axis(side=3, at= c(-1,-0.5,0,0.5,1), tck=0.03, labels=c(rep("",5)))
 arrows(0.23,10,0.23,8.7,code=2, length=0.08,lwd=2, col='grey40', angle=45)
 mtext("Tarsus length",at=0, side = 3, line = 1, cex=1, font=2)
 # without F in model
-arrows(metaTarsusAbn$lower[metaTarsusAbn$study == 'Johannes'],5.85,
-metaTarsusAbn$upper[metaTarsusAbn$study == 'Johannes'],5.85, length=0, col='grey', lwd=1)
-points(x= metaTarsusAbn$est[metaTarsusAbn$study == 'Johannes'], y=5.85,pch=21, cex=sqrt(NJohannesTarsusAbn)*0.3, col='grey',bg='white')
-arrows(metaTarsusAbn$lower[metaTarsusAbn$study == 'Sanja'],3.7,
-metaTarsusAbn$upper[metaTarsusAbn$study == 'Sanja'],3.7, length=0, col ="grey", lwd=1)
-points(x= metaTarsusAbn$est[metaTarsusAbn$study == 'Sanja'], y=3.7,pch=21, cex=sqrt(NSanjaTarsusAbn)*0.3, col='grey',bg='white')
-polygon(x= c(summarymetaTarsusAbn$summary -summarymetaTarsusAbn$se.summary*1.96,
-			 summarymetaTarsusAbn$summary,
-			 summarymetaTarsusAbn$summary+summarymetaTarsusAbn$se.summary*1.96,
-			 summarymetaTarsusAbn$summary),
+arrows(metaTarsusAbnREV$lower[metaTarsusAbnREV$study == 'Johannes'],5.85,
+metaTarsusAbnREV$upper[metaTarsusAbnREV$study == 'Johannes'],5.85, length=0, col='grey', lwd=1)
+points(x= metaTarsusAbnREV$est[metaTarsusAbnREV$study == 'Johannes'], y=5.85,pch=21, cex=sqrt(NJohannesTarsusAbn)*0.3, col='grey',bg='white')
+arrows(metaTarsusAbnREV$lower[metaTarsusAbnREV$study == 'Sanja'],3.7,
+metaTarsusAbnREV$upper[metaTarsusAbnREV$study == 'Sanja'],3.7, length=0, col ="grey", lwd=1)
+points(x= metaTarsusAbnREV$est[metaTarsusAbnREV$study == 'Sanja'], y=3.7,pch=21, cex=sqrt(NSanjaTarsusAbn)*0.3, col='grey',bg='white')
+polygon(x= c(summarymetaTarsusAbnREV$summary -summarymetaTarsusAbnREV$se.summary*1.96,
+			 summarymetaTarsusAbnREV$summary,
+			 summarymetaTarsusAbnREV$summary+summarymetaTarsusAbnREV$se.summary*1.96,
+			 summarymetaTarsusAbnREV$summary),
 		y=c(1.3,1.3-0.3,1.3,1.3+0.3), border='grey')
 # with F in model
-points(x= metaTarsusAbnF$est[metaTarsusAbnF$study == 'Malika'], y=7.6,pch=19, cex=sqrt(NMalikaTarsusAbn)*0.3)
-arrows(metaTarsusAbnF$lower[metaTarsusAbnF$study == 'Malika'],7.6,
-metaTarsusAbnF$upper[metaTarsusAbnF$study == 'Malika'],7.6, length=0, col = "black", lwd=2)
-points(x= metaTarsusAbnF$est[metaTarsusAbnF$study == 'Johannes'], y=5.05,pch=19, cex=sqrt(NJohannesTarsusAbn)*0.3)
-arrows(metaTarsusAbnF$lower[metaTarsusAbnF$study == 'Johannes'],5.05,
-metaTarsusAbnF$upper[metaTarsusAbnF$study == 'Johannes'],5.05, length=0, col = "black", lwd=2)
-points(x= metaTarsusAbnF$est[metaTarsusAbnF$study == 'Sanja'], y=2.9, pch=19, cex=sqrt(NSanjaTarsusAbn)*0.3)
-arrows(metaTarsusAbnF$lower[metaTarsusAbnF$study == 'Sanja'],2.9,
-metaTarsusAbnF$upper[metaTarsusAbnF$study == 'Sanja'],2.9, length=0, col = "black", lwd=2)
-polygon(x= c(summarymetaTarsusAbnF$summary -summarymetaTarsusAbnF$se.summary*1.96,
-			 summarymetaTarsusAbnF$summary,
-			 summarymetaTarsusAbnF$summary+summarymetaTarsusAbnF$se.summary*1.96,
-			 summarymetaTarsusAbnF$summary),
+points(x= metaTarsusAbnREVF$est[metaTarsusAbnREVF$study == 'Malika'], y=7.6,pch=19, cex=sqrt(NMalikaTarsusAbn)*0.3)
+arrows(metaTarsusAbnREVF$lower[metaTarsusAbnREVF$study == 'Malika'],7.6,
+metaTarsusAbnREVF$upper[metaTarsusAbnREVF$study == 'Malika'],7.6, length=0, col = "black", lwd=2)
+points(x= metaTarsusAbnREVF$est[metaTarsusAbnREVF$study == 'Johannes'], y=5.05,pch=19, cex=sqrt(NJohannesTarsusAbn)*0.3)
+arrows(metaTarsusAbnREVF$lower[metaTarsusAbnREVF$study == 'Johannes'],5.05,
+metaTarsusAbnREVF$upper[metaTarsusAbnREVF$study == 'Johannes'],5.05, length=0, col = "black", lwd=2)
+points(x= metaTarsusAbnREVF$est[metaTarsusAbnREVF$study == 'Sanja'], y=2.9, pch=19, cex=sqrt(NSanjaTarsusAbn)*0.3)
+arrows(metaTarsusAbnREVF$lower[metaTarsusAbnREVF$study == 'Sanja'],2.9,
+metaTarsusAbnREVF$upper[metaTarsusAbnREVF$study == 'Sanja'],2.9, length=0, col = "black", lwd=2)
+polygon(x= c(summarymetaTarsusAbnREVF$summary -summarymetaTarsusAbnREVF$se.summary*1.96,
+			 summarymetaTarsusAbnREVF$summary,
+			 summarymetaTarsusAbnREVF$summary+summarymetaTarsusAbnREVF$se.summary*1.96,
+			 summarymetaTarsusAbnREVF$summary),
 		y=c(0.6,0.6-0.3,0.6,0.6+0.3), col='black')
 
 
@@ -8217,7 +8217,7 @@ polygon(x= c(summarymetaBeakColorMunselSlengthF$summary -summarymetaBeakColorMun
 
 		
 mtext("Correlation coefficient (  )",at=0, side = 1, line = 2.5, cex=1, font=2)
-mtext("r",at=0.65, side = 1, line = 2.5, cex=1, font=4)
+mtext("r",at=0.7, side = 1, line = 2.5, cex=1, font=4)
 		
 
 
@@ -8258,6 +8258,1427 @@ polygon(x= c(summarymetaTarsusSlengthF$summary -summarymetaTarsusSlengthF$se.sum
 		
 }
 
+{# supplementary table Functional sperm
+
+supptable <- data.frame(matrix(0, ncol = 8, nrow = 63))
+colnames(supptable) <- c('Sperm_trait', 'Phenotypic_indicator_trait', 'Replicate','ControlforF_YN' , 'estimate', 'Lower', 'Upper', 'N')
+supptable$Sperm_trait <-c(rep('Functionality',21) , rep('Velocity',21) ,rep('Length',21))
+supptable$Phenotypic_indicator_trait <-rep(c(rep('Courtship rate',7) , rep('Beak color',7) ,rep('Tarsus length',7)),3)
+supptable$Replicate <-rep(c('Wild-derived (outbreds)', 'Wild-derived (inbreds + outbreds)', 'Wild-derived (inbreds + outbreds)','Domesticated (inbreds + outbreds)','Domesticated (inbreds + outbreds)', 'Overall', 'Overall'),9)
+supptable$ControlforF_YN <-rep(c(1,0,1,0,1,0,1),9)
+
+head(supptable,21)
+supptable
+
+{# Functionality
+
+{# Functionality - Courtship Rate
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplayAbnREV$est[metaDisplayAbnREV$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplayAbnREV$est[metaDisplayAbnREV$study=='Johannes']		
+
+
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayAbnREVF$est[metaDisplayAbnREVF$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayAbnREVF$est[metaDisplayAbnREVF$study=='Johannes']	
+
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayAbnREVF$est[metaDisplayAbnREVF$study=='Malika']	
+		
+		
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaDisplayAbnREV$summary
+					
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaDisplayAbnREVF$summary					
+
+										
+					
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplayAbnREV$lower[metaDisplayAbnREV$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplayAbnREV$lower[metaDisplayAbnREV$study=='Johannes']		
+
+
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayAbnREVF$lower[metaDisplayAbnREVF$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayAbnREVF$lower[metaDisplayAbnREVF$study=='Johannes']	
+
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayAbnREVF$lower[metaDisplayAbnREVF$study=='Malika']	
+
+					
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaDisplayAbnREV$summary -summarymetaDisplayAbnREV$se.summary*1.96
+					
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaDisplayAbnREVF$summary -summarymetaDisplayAbnREVF$se.summary*1.96
+
+					
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplayAbnREV$upper[metaDisplayAbnREV$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplayAbnREV$upper[metaDisplayAbnREV$study=='Johannes']		
+
+
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayAbnREVF$upper[metaDisplayAbnREVF$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayAbnREVF$upper[metaDisplayAbnREVF$study=='Johannes']	
+
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayAbnREVF$upper[metaDisplayAbnREVF$study=='Malika']
+	
+	
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaDisplayAbnREV$summary +summarymetaDisplayAbnREV$se.summary*1.96
+					
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaDisplayAbnREVF$summary +summarymetaDisplayAbnREVF$se.summary*1.96
+
+					
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NSanjaDisplayAbn
+
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NJohannesDisplayAbn	
+
+
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NSanjaDisplayAbn
+
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NJohannesDisplayAbn
+
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- NMalikaDisplayAbn
+					
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- sum(NJohannesDisplayAbn,NSanjaDisplayAbn)
+					
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <-  sum(NJohannesDisplayAbn,NSanjaDisplayAbn,NMalikaDisplayAbn)
+
+					
+}					
+
+{# Functionality - Beak Color
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselAbnREV$est[metaBeakColorMunselAbnREV$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselAbnREV$est[metaBeakColorMunselAbnREV$study=='Johannes']		
+
+
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselAbnREVF$est[metaBeakColorMunselAbnREVF$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselAbnREVF$est[metaBeakColorMunselAbnREVF$study=='Johannes']	
+
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselAbnREVF$est[metaBeakColorMunselAbnREVF$study=='Malika']	
+		
+		
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaBeakColorMunselAbnREV$summary
+					
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaBeakColorMunselAbnREVF$summary					
+
+										
+					
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselAbnREV$lower[metaBeakColorMunselAbnREV$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselAbnREV$lower[metaBeakColorMunselAbnREV$study=='Johannes']		
+
+
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselAbnREVF$lower[metaBeakColorMunselAbnREVF$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselAbnREVF$lower[metaBeakColorMunselAbnREVF$study=='Johannes']	
+
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselAbnREVF$lower[metaBeakColorMunselAbnREVF$study=='Malika']	
+
+					
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaBeakColorMunselAbnREV$summary -summarymetaBeakColorMunselAbnREV$se.summary*1.96
+					
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaBeakColorMunselAbnREVF$summary -summarymetaBeakColorMunselAbnREVF$se.summary*1.96
+
+					
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselAbnREV$upper[metaBeakColorMunselAbnREV$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselAbnREV$upper[metaBeakColorMunselAbnREV$study=='Johannes']		
+
+
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselAbnREVF$upper[metaBeakColorMunselAbnREVF$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselAbnREVF$upper[metaBeakColorMunselAbnREVF$study=='Johannes']	
+
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselAbnREVF$upper[metaBeakColorMunselAbnREVF$study=='Malika']
+	
+	
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaBeakColorMunselAbnREV$summary +summarymetaBeakColorMunselAbnREV$se.summary*1.96
+					
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaBeakColorMunselAbnREVF$summary +summarymetaBeakColorMunselAbnREVF$se.summary*1.96
+
+					
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NSanjaBeakMunselAbn
+
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NJohannesBeakMunselAbn	
+
+
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NSanjaBeakMunselAbn
+
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NJohannesBeakMunselAbn
+
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- NMalikaBeakAbn
+					
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- sum(NJohannesBeakMunselAbn,NSanjaBeakMunselAbn)
+					
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <-  sum(NJohannesBeakMunselAbn,NSanjaBeakMunselAbn,NMalikaBeakAbn)
+
+					
+}					
+
+{# Functionality - Tarsus length
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusAbnREV$est[metaTarsusAbnREV$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusAbnREV$est[metaTarsusAbnREV$study=='Johannes']		
+
+
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusAbnREVF$est[metaTarsusAbnREVF$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusAbnREVF$est[metaTarsusAbnREVF$study=='Johannes']	
+
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusAbnREVF$est[metaTarsusAbnREVF$study=='Malika']	
+		
+		
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaTarsusAbnREV$summary
+					
+supptable$estimate[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaTarsusAbnREVF$summary					
+
+										
+					
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusAbnREV$lower[metaTarsusAbnREV$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusAbnREV$lower[metaTarsusAbnREV$study=='Johannes']		
+
+
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusAbnREVF$lower[metaTarsusAbnREVF$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusAbnREVF$lower[metaTarsusAbnREVF$study=='Johannes']	
+
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusAbnREVF$lower[metaTarsusAbnREVF$study=='Malika']	
+
+					
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaTarsusAbnREV$summary -summarymetaTarsusAbnREV$se.summary*1.96
+					
+supptable$Lower[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaTarsusAbnREVF$summary -summarymetaTarsusAbnREVF$se.summary*1.96
+
+					
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusAbnREV$upper[metaTarsusAbnREV$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusAbnREV$upper[metaTarsusAbnREV$study=='Johannes']		
+
+
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusAbnREVF$upper[metaTarsusAbnREVF$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusAbnREVF$upper[metaTarsusAbnREVF$study=='Johannes']	
+
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusAbnREVF$upper[metaTarsusAbnREVF$study=='Malika']
+	
+	
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaTarsusAbnREV$summary +summarymetaTarsusAbnREV$se.summary*1.96
+					
+supptable$Upper[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaTarsusAbnREVF$summary +summarymetaTarsusAbnREVF$se.summary*1.96
+
+					
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NSanjaTarsusAbn
+
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NJohannesTarsusAbn	
+
+
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NSanjaTarsusAbn
+
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NJohannesTarsusAbn
+
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- NMalikaTarsusAbn
+					
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- sum(NJohannesTarsusAbn,NSanjaTarsusAbn)
+					
+supptable$N[supptable$Sperm_trait=='Functionality' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <-  sum(NJohannesTarsusAbn,NSanjaTarsusAbn,NMalikaTarsusAbn)
+
+					
+}					
+
+}
+
+{# Velocity
+
+{# Velocity - Courtship Rate
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplayVelocity$est[metaDisplayVelocity$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplayVelocity$est[metaDisplayVelocity$study=='Johannes']		
+
+
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayVelocityF$est[metaDisplayVelocityF$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayVelocityF$est[metaDisplayVelocityF$study=='Johannes']	
+
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayVelocityF$est[metaDisplayVelocityF$study=='Malika']	
+		
+		
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaDisplayVelocity$summary
+					
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaDisplayVelocityF$summary					
+
+										
+					
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplayVelocity$lower[metaDisplayVelocity$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplayVelocity$lower[metaDisplayVelocity$study=='Johannes']		
+
+
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayVelocityF$lower[metaDisplayVelocityF$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayVelocityF$lower[metaDisplayVelocityF$study=='Johannes']	
+
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayVelocityF$lower[metaDisplayVelocityF$study=='Malika']	
+
+					
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaDisplayVelocity$summary -summarymetaDisplayVelocity$se.summary*1.96
+					
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaDisplayVelocityF$summary -summarymetaDisplayVelocityF$se.summary*1.96
+
+					
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplayVelocity$upper[metaDisplayVelocity$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplayVelocity$upper[metaDisplayVelocity$study=='Johannes']		
+
+
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayVelocityF$upper[metaDisplayVelocityF$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayVelocityF$upper[metaDisplayVelocityF$study=='Johannes']	
+
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplayVelocityF$upper[metaDisplayVelocityF$study=='Malika']
+	
+	
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaDisplayVelocity$summary +summarymetaDisplayVelocity$se.summary*1.96
+					
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaDisplayVelocityF$summary +summarymetaDisplayVelocityF$se.summary*1.96
+
+					
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NSanjaDisplayVelocity
+
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NJohannesDisplayVelocity	
+
+
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NSanjaDisplayVelocity
+
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NJohannesDisplayVelocity
+
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- NMalikaDisplayVelocity
+					
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- sum(NJohannesDisplayVelocity,NSanjaDisplayVelocity)
+					
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <-  sum(NJohannesDisplayVelocity,NSanjaDisplayVelocity,NMalikaDisplayVelocity)
+
+					
+}					
+
+{# Velocity - Beak Color
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselVCL$est[metaBeakColorMunselVCL$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselVCL$est[metaBeakColorMunselVCL$study=='Johannes']		
+
+
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselVCLF$est[metaBeakColorMunselVCLF$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselVCLF$est[metaBeakColorMunselVCLF$study=='Johannes']	
+
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselVCLF$est[metaBeakColorMunselVCLF$study=='Malika']	
+		
+		
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaBeakColorMunselVCL$summary
+					
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaBeakColorMunselVCLF$summary					
+
+										
+					
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselVCL$lower[metaBeakColorMunselVCL$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselVCL$lower[metaBeakColorMunselVCL$study=='Johannes']		
+
+
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselVCLF$lower[metaBeakColorMunselVCLF$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselVCLF$lower[metaBeakColorMunselVCLF$study=='Johannes']	
+
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselVCLF$lower[metaBeakColorMunselVCLF$study=='Malika']	
+
+					
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaBeakColorMunselVCL$summary -summarymetaBeakColorMunselVCL$se.summary*1.96
+					
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaBeakColorMunselVCLF$summary -summarymetaBeakColorMunselVCLF$se.summary*1.96
+
+					
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselVCL$upper[metaBeakColorMunselVCL$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselVCL$upper[metaBeakColorMunselVCL$study=='Johannes']		
+
+
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselVCLF$upper[metaBeakColorMunselVCLF$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselVCLF$upper[metaBeakColorMunselVCLF$study=='Johannes']	
+
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselVCLF$upper[metaBeakColorMunselVCLF$study=='Malika']
+	
+	
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaBeakColorMunselVCL$summary +summarymetaBeakColorMunselVCL$se.summary*1.96
+					
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaBeakColorMunselVCLF$summary +summarymetaBeakColorMunselVCLF$se.summary*1.96
+
+					
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NSanjaBeakMunselVelocity
+
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NJohannesBeakMunselVCL	
+
+
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NSanjaBeakMunselVelocity
+
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NJohannesBeakMunselVCL
+
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- NMalikaBeakVCL
+					
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- sum(NJohannesBeakMunselVCL,NSanjaBeakMunselVelocity)
+					
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <-  sum(NJohannesBeakMunselVCL,NSanjaBeakMunselVelocity,NMalikaBeakVCL)
+
+					
+}					
+
+{# Velocity - Tarsus length
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusVCL$est[metaTarsusVCL$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusVCL$est[metaTarsusVCL$study=='Johannes']		
+
+
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusVCLF$est[metaTarsusVCLF$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusVCLF$est[metaTarsusVCLF$study=='Johannes']	
+
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusVCLF$est[metaTarsusVCLF$study=='Malika']	
+		
+		
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaTarsusVCL$summary
+					
+supptable$estimate[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaTarsusVCLF$summary					
+
+										
+					
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusVCL$lower[metaTarsusVCL$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusVCL$lower[metaTarsusVCL$study=='Johannes']		
+
+
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusVCLF$lower[metaTarsusVCLF$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusVCLF$lower[metaTarsusVCLF$study=='Johannes']	
+
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusVCLF$lower[metaTarsusVCLF$study=='Malika']	
+
+					
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaTarsusVCL$summary -summarymetaTarsusVCL$se.summary*1.96
+					
+supptable$Lower[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaTarsusVCLF$summary -summarymetaTarsusVCLF$se.summary*1.96
+
+					
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusVCL$upper[metaTarsusVCL$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusVCL$upper[metaTarsusVCL$study=='Johannes']		
+
+
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusVCLF$upper[metaTarsusVCLF$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusVCLF$upper[metaTarsusVCLF$study=='Johannes']	
+
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusVCLF$upper[metaTarsusVCLF$study=='Malika']
+	
+	
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaTarsusVCL$summary +summarymetaTarsusVCL$se.summary*1.96
+					
+supptable$Upper[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaTarsusVCLF$summary +summarymetaTarsusVCLF$se.summary*1.96
+
+					
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NSanjaTarsusVelocity
+
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NJohannesTarsusVCL	
+
+
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NSanjaTarsusVelocity
+
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NJohannesTarsusVCL
+
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- NMalikaTarsusVCL
+					
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- sum(NJohannesTarsusVCL,NSanjaTarsusVelocity)
+					
+supptable$N[supptable$Sperm_trait=='Velocity' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <-  sum(NJohannesTarsusVCL,NSanjaTarsusVelocity,NMalikaTarsusVCL)
+
+					
+}					
+
+}
+
+{# Length
+
+{# Length - Courtship Rate
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplaySlength$est[metaDisplaySlength$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplaySlength$est[metaDisplaySlength$study=='Johannes']		
+
+
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplaySlengthF$est[metaDisplaySlengthF$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplaySlengthF$est[metaDisplaySlengthF$study=='Johannes']	
+
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplaySlengthF$est[metaDisplaySlengthF$study=='Malika']	
+		
+		
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaDisplaySlength$summary
+					
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaDisplaySlengthF$summary					
+
+										
+					
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplaySlength$lower[metaDisplaySlength$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplaySlength$lower[metaDisplaySlength$study=='Johannes']		
+
+
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplaySlengthF$lower[metaDisplaySlengthF$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplaySlengthF$lower[metaDisplaySlengthF$study=='Johannes']	
+
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplaySlengthF$lower[metaDisplaySlengthF$study=='Malika']	
+
+					
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaDisplaySlength$summary -summarymetaDisplaySlength$se.summary*1.96
+					
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaDisplaySlengthF$summary -summarymetaDisplaySlengthF$se.summary*1.96
+
+					
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplaySlength$upper[metaDisplaySlength$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaDisplaySlength$upper[metaDisplaySlength$study=='Johannes']		
+
+
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplaySlengthF$upper[metaDisplaySlengthF$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplaySlengthF$upper[metaDisplaySlengthF$study=='Johannes']	
+
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaDisplaySlengthF$upper[metaDisplaySlengthF$study=='Malika']
+	
+	
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaDisplaySlength$summary +summarymetaDisplaySlength$se.summary*1.96
+					
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaDisplaySlengthF$summary +summarymetaDisplaySlengthF$se.summary*1.96
+
+					
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NSanjaDisplaySlength
+
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NJohannesDisplaySlength	
+
+
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NSanjaDisplaySlength
+
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NJohannesDisplaySlength
+
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- NMalikaDisplaySlength
+					
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- sum(NJohannesDisplaySlength,NSanjaDisplaySlength)
+					
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Courtship rate"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <-  sum(NJohannesDisplaySlength,NSanjaDisplaySlength,NMalikaDisplaySlength)
+
+					
+}					
+
+{# Length - Beak Color
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselSlength$est[metaBeakColorMunselSlength$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselSlength$est[metaBeakColorMunselSlength$study=='Johannes']		
+
+
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselSlengthF$est[metaBeakColorMunselSlengthF$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselSlengthF$est[metaBeakColorMunselSlengthF$study=='Johannes']	
+
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselSlengthF$est[metaBeakColorMunselSlengthF$study=='Malika']	
+		
+		
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaBeakColorMunselSlength$summary
+					
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaBeakColorMunselSlengthF$summary					
+
+										
+					
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselSlength$lower[metaBeakColorMunselSlength$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselSlength$lower[metaBeakColorMunselSlength$study=='Johannes']		
+
+
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselSlengthF$lower[metaBeakColorMunselSlengthF$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselSlengthF$lower[metaBeakColorMunselSlengthF$study=='Johannes']	
+
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselSlengthF$lower[metaBeakColorMunselSlengthF$study=='Malika']	
+
+					
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaBeakColorMunselSlength$summary -summarymetaBeakColorMunselSlength$se.summary*1.96
+					
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaBeakColorMunselSlengthF$summary -summarymetaBeakColorMunselSlengthF$se.summary*1.96
+
+					
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselSlength$upper[metaBeakColorMunselSlength$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaBeakColorMunselSlength$upper[metaBeakColorMunselSlength$study=='Johannes']		
+
+
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselSlengthF$upper[metaBeakColorMunselSlengthF$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselSlengthF$upper[metaBeakColorMunselSlengthF$study=='Johannes']	
+
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaBeakColorMunselSlengthF$upper[metaBeakColorMunselSlengthF$study=='Malika']
+	
+	
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaBeakColorMunselSlength$summary +summarymetaBeakColorMunselSlength$se.summary*1.96
+					
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaBeakColorMunselSlengthF$summary +summarymetaBeakColorMunselSlengthF$se.summary*1.96
+
+					
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NSanjaBeakMunselSlength
+
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NJohannesBeakMunselSlength	
+
+
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NSanjaBeakMunselSlength
+
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NJohannesBeakMunselSlength
+
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- NMalikaBeakSlength
+					
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- sum(NJohannesBeakMunselSlength,NSanjaBeakMunselSlength)
+					
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Beak color"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <-  sum(NJohannesBeakMunselSlength,NSanjaBeakMunselSlength,NMalikaBeakSlength)
+
+					
+}					
+
+{# Length - Tarsus length
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusSlength$est[metaTarsusSlength$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusSlength$est[metaTarsusSlength$study=='Johannes']		
+
+
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusSlengthF$est[metaTarsusSlengthF$study=='Sanja']
+
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusSlengthF$est[metaTarsusSlengthF$study=='Johannes']	
+
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusSlengthF$est[metaTarsusSlengthF$study=='Malika']	
+		
+		
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaTarsusSlength$summary
+					
+supptable$estimate[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaTarsusSlengthF$summary					
+
+										
+					
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusSlength$lower[metaTarsusSlength$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusSlength$lower[metaTarsusSlength$study=='Johannes']		
+
+
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusSlengthF$lower[metaTarsusSlengthF$study=='Sanja']
+
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusSlengthF$lower[metaTarsusSlengthF$study=='Johannes']	
+
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusSlengthF$lower[metaTarsusSlengthF$study=='Malika']	
+
+					
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaTarsusSlength$summary -summarymetaTarsusSlength$se.summary*1.96
+					
+supptable$Lower[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaTarsusSlengthF$summary -summarymetaTarsusSlengthF$se.summary*1.96
+
+					
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusSlength$upper[metaTarsusSlength$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- metaTarsusSlength$upper[metaTarsusSlength$study=='Johannes']		
+
+
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusSlengthF$upper[metaTarsusSlengthF$study=='Sanja']
+
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusSlengthF$upper[metaTarsusSlengthF$study=='Johannes']	
+
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- metaTarsusSlengthF$upper[metaTarsusSlengthF$study=='Malika']
+	
+	
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- summarymetaTarsusSlength$summary +summarymetaTarsusSlength$se.summary*1.96
+					
+supptable$Upper[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <- summarymetaTarsusSlengthF$summary +summarymetaTarsusSlengthF$se.summary*1.96
+
+					
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NSanjaTarsusSlength
+
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 0] <- NJohannesTarsusSlength	
+
+
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Domesticated (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NSanjaTarsusSlength
+
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (inbreds + outbreds)"
+					& supptable$ControlforF_YN == 1] <- NJohannesTarsusSlength
+
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Wild-derived (outbreds)"
+					& supptable$ControlforF_YN == 1] <- NMalikaTarsusSlength
+					
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 0] <- sum(NJohannesTarsusSlength,NSanjaTarsusSlength)
+					
+supptable$N[supptable$Sperm_trait=='Length' 
+					& supptable$Phenotypic_indicator_trait == "Tarsus length"
+					& supptable$Replicate == "Overall"
+					& supptable$ControlforF_YN == 1] <-  sum(NJohannesTarsusSlength,NSanjaTarsusSlength,NMalikaTarsusSlength)
+
+					
+}					
+
+}
+
+# write.table(supptable, file = "R_supptable.xls", sep="\t", col.names=TRUE)
+}
 
 }
 
